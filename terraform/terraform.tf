@@ -32,7 +32,7 @@ terraform {
     region = "us-east-1"
   }
 
-  required_version = "~> 1.6.3, < 2.0.0"
+  required_version = "~> 1.6.3"
  # Make sure this is placed at the bottom of the block, outside of required_providers
 }
 
