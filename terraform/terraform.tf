@@ -33,7 +33,7 @@ terraform {
   }
 
   required_version = "~> 1.6.3"
- # Make sure this is placed at the bottom of the block, outside of required_providers
+ # Make sure this is placed at the bottom of the block, outside of required_providers.
 }
 
 ##

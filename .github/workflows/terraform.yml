@@ -36,6 +36,10 @@ jobs:
      steps:
        - name: Checkout source code 
          uses: actions/checkout@v4
+       - name: Clear Terraform Cache
+         run: |
+           rm -rf .terraform
+           terraform init -backend-config="bucket=$BUCKET_TF_STATE"
    
        - name: Setup Terraform with specified version on the runner
          uses: hashicorp/setup-terraform@v2
@@ -45,6 +49,7 @@ jobs:
        - name: Terraform init
          id: init
          run: terraform init -backend-config="bucket=$BUCKET_TF_STATE"
+        
        
        - name: Terraform format
          id: fmt
